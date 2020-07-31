@@ -14,6 +14,11 @@ Alveo
 AWS EC2 F1
 * [AWS FPGA (repo)](https://github.com/aws/aws-fpga)
 * [Vitis AWS F1 Developer Labs (repo)](https://github.com/Xilinx/SDAccel-AWS-F1-Developer-Labs)
+* Developing on AWS F1 with SDAccel and RTL Kernels (videos):
+  * [Introduction to AWS F1 and the SDAccel Development Environment (30:44)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part1.html)
+  * [AWS F1 Hardware Specification and Requirements (9:21)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part2.html)
+  * [Packaging Existing RTL IP for AWS F1 (41:37)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part3.html)
+  * [Running a Host-side Application with an RTL Kernel (31:10)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part4.html)
 * [AWS FPGA discussion forum (password required)](https://forums.aws.amazon.com/forum.jspa?forumID=243)
 
 Vitis
@@ -27,10 +32,13 @@ Vitis-AI
 * [Vitis AI tutorials (repo)](https://github.com/Xilinx/Vitis-AI-Tutorials)
 * [Vitis AI User Guide (pdf)](https://www.xilinx.com/support/documentation/sw_manuals/vitis_ai/1_2/ug1414-vitis-ai.pdf)
 
+UltraFast DesignMethodology
+* [UltraFast Design Methodology Guide for the Vivado Design Suite (pdf)](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug949-vivado-design-methodology.pdf)
+* [UltraFast Design Methodology Guidelines For Predicatble Success(video, 54:31)](https://www.xilinx.com/products/design-tools/ultrafast.html)
+
 ## Outdated links (only for reference)
 
 SDAccel (superseded by Vitis)
-* [Developing on AWS F1 with SDAccel and RTL Kernels (video)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part1.html)
 * [SDAccel tutorials (repo)](https://github.com/Xilinx/SDAccel-Tutorials)
 * [SDAccel examples (repo)](https://github.com/Xilinx/SDAccel_Examples)
 * [AWS F1 Xilinx Developer Labs (repo)](https://github.com/Xilinx/AWS-F1-Developer-Labs)
