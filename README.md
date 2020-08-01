@@ -6,6 +6,11 @@ The documentation in this repository is distributed under a
 
 The content of this repository has as objective to provide recipes about the flow employed to work with Alveo boards or the Amazon FPGA instances (F1). Although there exists getting started tutorials provided by Xilinx and Amazon, they are intended as a first approach, with one-time configurations performed in the middle, missing steps or the absence of general troubleshooting. Moreover, they can be not suitable for subsequent executions, where you only want instructions without long explanations (recipes).
 
+## Receips
+
+* [Alveo Workflow](alveo-workflow.md)
+* [AWS Workflow](aws-workflow.md)
+
 ## Useful links
 
 Alveo
@@ -22,26 +27,17 @@ AWS EC2 F1
 * [AWS FPGA discussion forum (password required)](https://forums.aws.amazon.com/forum.jspa?forumID=243)
 
 Vitis
-* [Vitis tutorials (repo)](https://github.com/Xilinx/Vitis-Tutorials)
-* [Vitis Accel Examples (repo)](https://github.com/Xilinx/Vitis_Accel_Examples)
+* [Vitis tutorials (repo)](https://github.com/Xilinx/Vitis-Tutorials) (formerly [SDAccel tutorials](https://github.com/Xilinx/SDAccel-Tutorials))
+* [Vitis Accel Examples (repo)](https://github.com/Xilinx/Vitis_Accel_Examples) (formerly [SDAccel examples](https://github.com/Xilinx/SDAccel_Examples))
 * [Vitis libraries (repo)](https://github.com/Xilinx/Vitis_Libraries)
 * [Vitis libraries (doc)](https://xilinx.github.io/Vitis_Libraries)
+* [Vitis Unified Software Platform Documentation - Application Acceleration Development (pdf)](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1393-vitis-application-acceleration.pdf)
 
 Vitis-AI
-* [Vitis AI (repo)](https://github.com/Xilinx/Vitis-AI)
+* [Vitis AI (repo)](https://github.com/Xilinx/Vitis-AI) (formerly [ML Suite](https://github.com/Xilinx/ml-suite))
 * [Vitis AI tutorials (repo)](https://github.com/Xilinx/Vitis-AI-Tutorials)
 * [Vitis AI User Guide (pdf)](https://www.xilinx.com/support/documentation/sw_manuals/vitis_ai/1_2/ug1414-vitis-ai.pdf)
 
 UltraFast DesignMethodology
 * [UltraFast Design Methodology Guide for the Vivado Design Suite (pdf)](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug949-vivado-design-methodology.pdf)
 * [UltraFast Design Methodology Guidelines For Predicatble Success(video, 54:31)](https://www.xilinx.com/products/design-tools/ultrafast.html)
-
-## Outdated links (only for reference)
-
-SDAccel (superseded by Vitis)
-* [SDAccel tutorials (repo)](https://github.com/Xilinx/SDAccel-Tutorials)
-* [SDAccel examples (repo)](https://github.com/Xilinx/SDAccel_Examples)
-* [AWS F1 Xilinx Developer Labs (repo)](https://github.com/Xilinx/AWS-F1-Developer-Labs)
-
-ML-suite (superseded by Vitis-AI)
-* [Xilinx ML Suite (repo)](https://github.com/Xilinx/ml-suite)
