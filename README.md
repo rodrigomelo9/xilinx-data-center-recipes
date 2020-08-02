@@ -24,7 +24,7 @@ AWS EC2 F1
   * [AWS F1 Hardware Specification and Requirements (9:21)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part2.html)
   * [Packaging Existing RTL IP for AWS F1 (41:37)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part3.html)
   * [Running a Host-side Application with an RTL Kernel (31:10)](https://www.xilinx.com/video/software/developing-on-aws-f1-with-sdaccel-and-rtl-kernels-part4.html)
-* [AWS FPGA discussion forum (password required)](https://forums.aws.amazon.com/forum.jspa?forumID=243)
+* [AWS FPGA discussion forum](https://forums.aws.amazon.com/forum.jspa?forumID=243)
 
 Vitis
 * [Vitis tutorials (repo)](https://github.com/Xilinx/Vitis-Tutorials) (formerly [SDAccel tutorials](https://github.com/Xilinx/SDAccel-Tutorials))
