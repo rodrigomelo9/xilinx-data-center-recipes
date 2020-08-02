@@ -48,10 +48,15 @@ Build the Custom Logic (CL):
 export EMAIL=your.email@example.com
 $AWS_FPGA_REPO_DIR/shared/bin/scripts/notify_via_sns.py
 ```
-Check your e-mail and confirm subscription.
+> Check your e-mail and confirm subscription.
 ```bash
 cd $CL_DIR/build/scripts
 ./aws_build_dcp_from_cl.sh -notify
+```
+
+```bash
+cd $CL_DIR/software/runtime/
+make all
 ```
 
 ## AFI creation
@@ -68,7 +73,7 @@ $VITIS_DIR/tools/create_vitis_afi.sh -xclbin=<FILENAME>.xclbin -s3_bucket=your-b
 aws ec2 create-fpga-image --region us-west-2 --name hello-hdl --description hello-hdk --input-storage-location Bucket=your-bucket-for-afis,Key=dcp/<DATE>-<TIME>.Developer_CL.tar --logs-storage-location Bucket=your-bucket-for-afis,Key=logs
 ```
 
-Wait until the AFI has been created successfully (*"Code": "available"*), running:
+Wait until the AFI has been created successfully (`"Code": "available"`), running:
 ```bash
 aws ec2 describe-fpga-images --fpga-image-ids <AFI_ID>
 ```
