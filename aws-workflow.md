@@ -63,12 +63,12 @@ make all
 
 > Here is assumed that your bucket was already created and called `your-bucket-for-afis`. Also, the DCP and LOGS directory were created, and called `dcp` and `logs` respectively.
 
-**After the software defined development:**
+**Software defined flow:**
 ```bash
 $VITIS_DIR/tools/create_vitis_afi.sh -xclbin=<FILENAME>.xclbin -s3_bucket=your-bucket-for-afis -s3_dcp_key=dcp -s3_logs_key=logs
 ```
 
-**After the hardware defined development:**
+**Hardware defined flow:**
 ```bash
 aws ec2 create-fpga-image --region us-west-2 --name hello-hdl --description hello-hdk --input-storage-location Bucket=your-bucket-for-afis,Key=dcp/<DATE>-<TIME>.Developer_CL.tar --logs-storage-location Bucket=your-bucket-for-afis,Key=logs
 ```
@@ -88,17 +88,18 @@ wait_for_afi.py
 
 > Here is assumed that you performed development on another instance (without FPGA), and you copied the <HOSTBIN>, <FPGABIN> and the required data files to a well configured and running FPGA instance, where the `aws_fpga` repository was cloned.
 
-**After the software defined development:**
+Preparation:
 ```bash
-cd $AWS_FPGA_REPO_DIR
-source vitis_runtime_setup.sh
+source $AWS_FPGA_REPO_DIR/vitis_runtime_setup.sh
+```
+
+**Software defined flow:**
+```bash
 ./<HOSTBIN> <FPGABIN>.awsxclbin
 ```
 
-**After the hardware defined development:**
+**Hardware defined flow:**
 ```bash
-cd $AWS_FPGA_REPO_DIR
-source sdk_setup.sh
 fpga-clear-local-image -S 0
 fpga-load-local-image -S 0 -I agfi-xxxxxxxxxxxxxxxxx
 ./<HOSTBIN>
