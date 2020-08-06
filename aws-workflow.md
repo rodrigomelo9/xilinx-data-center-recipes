@@ -66,7 +66,9 @@ make all
 
 ## AFI creation
 
-> Here is assumed that your bucket was already created and called `your-bucket-for-afis`. Also, the DCP and LOGS directory were created, and called `dcp` and `logs` respectively.
+> Here is assumed that your bucket was already created and called `your-bucket-for-afis`.
+> Also, the DCP and LOGS directory were created, and called `dcp` and `logs` respectively.
+> More info [here](aws-configs.md#creation-of-a-s3-bucket-and-folders).
 
 **Software defined flow:**
 ```bash
@@ -75,6 +77,7 @@ $VITIS_DIR/tools/create_vitis_afi.sh -xclbin=<FILENAME>.xclbin -s3_bucket=your-b
 
 **Hardware defined flow:**
 ```bash
+aws s3 cp $CL_DIR/build/checkpoints/to_aws/*.Developer_CL.tar s3://your-bucket-for-afis/dcp/
 aws ec2 create-fpga-image --region us-west-2 --name hello-hdl --description hello-hdk --input-storage-location Bucket=your-bucket-for-afis,Key=dcp/<DATE>-<TIME>.Developer_CL.tar --logs-storage-location Bucket=your-bucket-for-afis,Key=logs
 ```
 

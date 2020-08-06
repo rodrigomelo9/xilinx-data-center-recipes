@@ -30,7 +30,7 @@ Vitis
 * Vitis tutorials ([repo](https://github.com/Xilinx/Vitis-Tutorials), [doc](https://xilinx.github.io/Vitis-Tutorials)) (formerly [SDAccel tutorials](https://github.com/Xilinx/SDAccel-Tutorials))
 * Vitis Accel Examples ([repo](https://github.com/Xilinx/Vitis_Accel_Examples), [doc](https://xilinx.github.io/Vitis_Accel_Examples/master/html/index.html)) (formerly [SDAccel examples](https://github.com/Xilinx/SDAccel_Examples))
 * Vitis libraries ([repo](https://github.com/Xilinx/Vitis_Libraries), [doc](https://xilinx.github.io/Vitis_Libraries))
-* Vitis Unified Software Platform Documentation - Application Acceleration Development [pdf](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1393-vitis-application-acceleration.pdf)
+* Vitis Unified Software Platform Documentation - Application Acceleration Development ([pdf](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1393-vitis-application-acceleration.pdf))
 
 Vitis-AI
 * Vitis AI ([repo](https://github.com/Xilinx/Vitis-AI)) (formerly [ML Suite](https://github.com/Xilinx/ml-suite))
