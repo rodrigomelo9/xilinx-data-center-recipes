@@ -6,8 +6,7 @@
 
 Preparation:
 ```bash
-cd $AWS_FPGA_REPO_DIR
-source vitis_setup.sh
+source $AWS_FPGA_REPO_DIR/vitis_setup.sh
 cd <YOUR_PROJECT_DIR>
 ```
 
@@ -37,23 +36,28 @@ make TARGET=hw DEVICE=$AWS_PLATFORM all
 
 Preparation:
 ```bash
-cd $AWS_FPGA_REPO_DIR
-source hdk_setup.sh
+source $AWS_FPGA_REPO_DIR/hdk_setup.sh
 cd <YOUR_PROJECT_DIR>
 export CL_DIR=$(pwd)
 ```
 
 Build the Custom Logic (CL):
 ```bash
-export EMAIL=your.email@example.com
-$AWS_FPGA_REPO_DIR/shared/bin/scripts/notify_via_sns.py
-```
-> Check your e-mail and confirm subscription.
-```bash
 cd $CL_DIR/build/scripts
-./aws_build_dcp_from_cl.sh -notify
+./aws_build_dcp_from_cl.sh
 ```
 
+> Optionally, to be notified via e-mail when the build completes
+> ```bash
+> pip install --user --upgrade boto3 # If not previously installed
+> export EMAIL=your.email@example.com
+> $AWS_FPGA_REPO_DIR/shared/bin/scripts/notify_via_sns.py
+> ```
+> Check your e-mail and confirm subscription.
+>
+> `./aws_build_dcp_from_cl.sh -notify`
+
+Build the host binary:
 ```bash
 cd $CL_DIR/software/runtime/
 make all
@@ -78,10 +82,8 @@ Wait until the AFI has been created successfully (`"Code": "available"`), runnin
 aws ec2 describe-fpga-images --fpga-image-ids <AFI_ID>
 ```
 
-Alternative, you can use the following to receive an email:
-```bash
-wait_for_afi.py
-```
+> Optionally, to be notified via e-mail when the build completes
+> ```wait_for_afi.py --afi <AFI_ID> --notify --email <YOUR_EMAIL_HERE>```
 > Check your e-mail and confirm subscription.
 
 ## Hardware Execution
