@@ -54,8 +54,9 @@ cd $CL_DIR/build/scripts
 > $AWS_FPGA_REPO_DIR/shared/bin/scripts/notify_via_sns.py
 > ```
 > Check your e-mail and confirm subscription.
->
-> `./aws_build_dcp_from_cl.sh -notify`
+> ```bash
+> ./aws_build_dcp_from_cl.sh -notify
+> ```
 
 Build the host binary:
 ```bash
@@ -83,12 +84,14 @@ aws ec2 describe-fpga-images --fpga-image-ids <AFI_ID>
 ```
 
 > Optionally, to be notified via e-mail when the build completes
-> ```wait_for_afi.py --afi <AFI_ID> --notify --email <YOUR_EMAIL_HERE>```
+> ```bash
+> wait_for_afi.py --afi <AFI_ID> --notify --email <YOUR_EMAIL_HERE>
+> ```
 > Check your e-mail and confirm subscription.
 
 ## Hardware Execution
 
-> Here is assumed that you performed development on another instance (without FPGA), and you copied the <HOSTBIN>, <FPGABIN> and the required data files to a well configured and running FPGA instance, where the `aws_fpga` repository was cloned.
+> Here is assumed that you performed development on another instance (without FPGA), and you copied the `<HOSTBIN>`, `<FPGABIN>` and the required data files to a well configured and running FPGA instance, where the `aws_fpga` repository was cloned.
 
 Preparation:
 ```bash
