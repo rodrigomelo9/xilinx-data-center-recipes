@@ -59,7 +59,7 @@ cd $CL_DIR/build/scripts
 > export EMAIL=your.email@example.com
 > $AWS_FPGA_REPO_DIR/shared/bin/scripts/notify_via_sns.py
 > ```
-> Check your e-mail and confirm subscription.
+> Check your e-mail and confirm subscription (first time).
 > ```bash
 > ./aws_build_dcp_from_cl.sh -notify
 > ```
@@ -78,7 +78,8 @@ make all
 
 **Software defined flow:**
 ```bash
-$VITIS_DIR/tools/create_vitis_afi.sh -xclbin=<FILENAME>.xclbin -s3_bucket=your-bucket-for-afis -s3_dcp_key=dcp -s3_logs_key=logs
+$AWS_FPGA_REPO_DIR/Vitis/tools/create_vitis_afi.sh -xclbin=build_dir.hw.<AWS_PLATFORM>/<FILENAME>.xclbin -s3_bucket=your-bucket-for-afis -s3_dcp_key=dcp -s3_logs_key=logs
+cat <TIMESTAMP>_afi_id.txt
 ```
 
 **Hardware defined flow:**
@@ -96,7 +97,7 @@ aws ec2 describe-fpga-images --fpga-image-ids <AFI_ID>
 > ```bash
 > wait_for_afi.py --afi <AFI_ID> --notify --email <YOUR_EMAIL_HERE>
 > ```
-> Check your e-mail and confirm subscription.
+> Check your e-mail and confirm subscription (first time).
 
 ## Hardware Execution
 
