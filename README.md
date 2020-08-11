@@ -9,6 +9,7 @@ The content of this repository has as objective to provide recipes about the flo
 ## Receips
 
 * [Alveo Workflow](alveo-workflow.md)
+* [AWS Configurations](aws-configs.md)
 * [AWS Workflow](aws-workflow.md)
 
 ## Useful links
@@ -28,6 +29,7 @@ AWS EC2 F1
 
 Vitis
 * Vitis tutorials ([repo](https://github.com/Xilinx/Vitis-Tutorials), [doc](https://xilinx.github.io/Vitis-Tutorials)) (formerly [SDAccel tutorials](https://github.com/Xilinx/SDAccel-Tutorials))
+* Vitis In-Depth Tutorials ([repo](https://github.com/Xilinx/Vitis-In-Depth-Tutorial))
 * Vitis Accel Examples ([repo](https://github.com/Xilinx/Vitis_Accel_Examples), [doc](https://xilinx.github.io/Vitis_Accel_Examples/master/html/index.html)) (formerly [SDAccel examples](https://github.com/Xilinx/SDAccel_Examples))
 * Vitis libraries ([repo](https://github.com/Xilinx/Vitis_Libraries), [doc](https://xilinx.github.io/Vitis_Libraries))
 * Vitis Unified Software Platform Documentation - Application Acceleration Development ([pdf](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1393-vitis-application-acceleration.pdf))

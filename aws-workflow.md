@@ -28,6 +28,12 @@ make clean
 make TARGET=hw DEVICE=$AWS_PLATFORM all
 ```
 
+> **Note:** to keep a processes running after a SSH session disconnection, you can use:
+> ```bash
+> nohup long-running-process &
+> exit
+> ```
+
 ### Software defined development with Vitis (GUI based)
 
 [TODO](https://github.com/Xilinx/SDAccel-Tutorials/blob/master/docs/aws-getting-started/CPP/STEP2.md)
