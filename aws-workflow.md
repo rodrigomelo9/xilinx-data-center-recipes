@@ -98,6 +98,7 @@ aws ec2 describe-fpga-images --fpga-image-ids <AFI_ID>
 > wait_for_afi.py --afi <AFI_ID> --notify --email <YOUR_EMAIL_HERE>
 > ```
 > Check your e-mail and confirm subscription (first time).
+> **Note:** here you can also use `nohup long-running-process &`.
 
 ## Hardware Execution
 
@@ -118,4 +119,22 @@ source $AWS_FPGA_REPO_DIR/vitis_runtime_setup.sh
 fpga-clear-local-image -S 0
 fpga-load-local-image -S 0 -I agfi-xxxxxxxxxxxxxxxxx
 ./<HOSTBIN>
+```
+
+## Known issues
+
+**An error occurred (ResourceLimitExceeded) when calling the CreateFpgaImage operation: You have reached the maximum allowed limit for the number of owned AFIs. To request an AFI limit increase, please contact AWS Support.**
+
+There is a limited number of AFIs that you can create (typically 100 per region and per AWS account).
+To check the quantity of AFIs owner by you:
+```bash
+aws ec2 describe-fpga-images --owners self | grep Name | wc -l
+```
+To get info to make a decision about which to delete:
+```bash
+aws ec2 describe-fpga-images --owners self
+```
+To delete an specifi AFI:
+```bash
+aws ec2 delete-fpga-image --fpga-image-id <AFI_ID>
 ```
