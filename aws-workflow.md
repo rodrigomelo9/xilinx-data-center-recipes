@@ -1,4 +1,4 @@
-# Amazon FPGA Workflow
+m# Amazon FPGA Workflow
 
 ## Host and FPGA binaries building
 
@@ -78,7 +78,8 @@ make all
 
 **Software defined flow:**
 ```bash
-$AWS_FPGA_REPO_DIR/Vitis/tools/create_vitis_afi.sh -xclbin=build_dir.hw.<AWS_PLATFORM>/<FILENAME>.xclbin -s3_bucket=your-bucket-for-afis -s3_dcp_key=dcp -s3_logs_key=logs
+source $AWS_FPGA_REPO_DIR/vitis_setup.sh
+$AWS_FPGA_REPO_DIR/Vitis/tools/create_vitis_afi.sh -xclbin=<PATH>/<FILENAME>.xclbin -s3_bucket=your-bucket-for-afis -s3_dcp_key=dcp -s3_logs_key=logs
 cat <TIMESTAMP>_afi_id.txt
 ```
 
@@ -87,6 +88,13 @@ cat <TIMESTAMP>_afi_id.txt
 aws s3 cp $CL_DIR/build/checkpoints/to_aws/*.Developer_CL.tar s3://your-bucket-for-afis/dcp/
 aws ec2 create-fpga-image --region us-west-2 --name hello-hdl --description hello-hdk --input-storage-location Bucket=your-bucket-for-afis,Key=dcp/<DATE>-<TIME>.Developer_CL.tar --logs-storage-location Bucket=your-bucket-for-afis,Key=logs
 ```
+
+> **Issue:** *An error occurred (ResourceLimitExceeded) when calling the CreateFpgaImage operation: You have reached the maximum allowed limit for the number of owned AFIs. To request an AFI limit increase, please contact AWS Support.*
+>
+> There is a limited number of AFIs that you can create (typically 100 per region and per AWS account).
+> * To check the quantity of AFIs owner by you: `aws ec2 describe-fpga-images --owners self | grep Name | wc -l`
+> * To get info to make a decision about which to delete: `aws ec2 describe-fpga-images --owners self`
+> * To delete an specific AFI: `aws ec2 delete-fpga-image --fpga-image-id <AFI_ID>`
 
 Wait until the AFI has been created successfully (`"Code": "available"`), running:
 ```bash
@@ -102,39 +110,17 @@ aws ec2 describe-fpga-images --fpga-image-ids <AFI_ID>
 
 ## Hardware Execution
 
-> Here is assumed that you performed development on another instance (without FPGA), and you copied the `<HOSTBIN>`, `<FPGABIN>` and the required data files to a well configured and running FPGA instance, where the `aws_fpga` repository was cloned.
+> If you performed development on another instance, you need to copy `<HOSTBIN>`, `<FPGABIN>` and the *required data files* to a well configured and running FPGA instance, with the `aws_fpga` repository cloned.
 
-Preparation:
 ```bash
 source $AWS_FPGA_REPO_DIR/vitis_runtime_setup.sh
-```
-
-**Software defined flow:**
-```bash
 ./<HOSTBIN> <FPGABIN>.awsxclbin
 ```
+or
 
-**Hardware defined flow:**
 ```bash
+source $AWS_FPGA_REPO_DIR/vitis_runtime_setup.sh
 fpga-clear-local-image -S 0
 fpga-load-local-image -S 0 -I agfi-xxxxxxxxxxxxxxxxx
 ./<HOSTBIN>
-```
-
-## Known issues
-
-**An error occurred (ResourceLimitExceeded) when calling the CreateFpgaImage operation: You have reached the maximum allowed limit for the number of owned AFIs. To request an AFI limit increase, please contact AWS Support.**
-
-There is a limited number of AFIs that you can create (typically 100 per region and per AWS account).
-To check the quantity of AFIs owner by you:
-```bash
-aws ec2 describe-fpga-images --owners self | grep Name | wc -l
-```
-To get info to make a decision about which to delete:
-```bash
-aws ec2 describe-fpga-images --owners self
-```
-To delete an specifi AFI:
-```bash
-aws ec2 delete-fpga-image --fpga-image-id <AFI_ID>
 ```
