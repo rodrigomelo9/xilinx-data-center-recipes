@@ -8,10 +8,10 @@ The content of this repository has as objective to provide recipes about the flo
 
 ## Receips
 
-* [Vitis RTL Flow](vitis-rtl-flow.md)
 * [Alveo Workflow](alveo-workflow.md)
 * [AWS Configurations](aws-configs.md)
 * [AWS Workflow](aws-workflow.md)
+* [Vitis RTL Flow](vitis-rtl-flow.md)
 
 ## Useful links
 
