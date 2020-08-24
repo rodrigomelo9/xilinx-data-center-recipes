@@ -36,7 +36,7 @@ make TARGET=hw DEVICE=$AWS_PLATFORM all
 
 ### Software defined development with Vitis (GUI based)
 
-[TODO](https://github.com/Xilinx/SDAccel-Tutorials/blob/master/docs/aws-getting-started/CPP/STEP2.md)
+* [Vitis RTL Flow](vitis-rtl-flow.md)
 
 ### Hardware development with Vivado (Makefile based)
 
