@@ -1,4 +1,4 @@
-m# Amazon FPGA Workflow
+# Amazon FPGA Workflow
 
 ## Host and FPGA binaries building
 
