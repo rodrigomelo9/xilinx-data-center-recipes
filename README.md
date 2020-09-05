@@ -6,7 +6,7 @@ The documentation in this repository is distributed under a
 
 The content of this repository has as objective to provide recipes about the flow employed to work with Alveo boards or the Amazon FPGA instances (F1). Although there exists getting started tutorials provided by Xilinx and Amazon, they are intended as a first approach, with one-time configurations performed in the middle, missing steps or the absence of general troubleshooting. Moreover, they could be not suitable for subsequent executions, where you only want instructions without long explanations (recipes).
 
-## Receips
+## Recipes
 
 * [Alveo Workflow](alveo-workflow.md)
 * [AWS Configurations](aws-configs.md)
