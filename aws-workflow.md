@@ -38,6 +38,8 @@ make TARGET=hw DEVICE=$AWS_PLATFORM all
 
 * [Vitis RTL Flow](vitis-rtl-flow.md)
 
+> **WARNING:** in this flow, the `<PROJECT>` name is used as `<HOSTBIN>` name, and the `<BINARY CONTAINER>` name is used as `<FPGABIN>` name, which is also used as the description of the AFI created by `create_vitis_afi.sh`. This script gives an error when these names are equals, which can be avoided deleting the `<HOSTBIN>`, generating the AFI and regenerating the `<HOSTBIN>`.
+
 ### Hardware development with Vivado (Makefile based)
 
 Preparation:
